@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { PHONE } from "@/lib/schema";
 
@@ -22,9 +23,13 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-green-700 rounded-md flex items-center justify-center">
-              <span className="text-white font-bold text-sm">QH</span>
-            </div>
+            <Image
+              src="/logo.svg"
+              alt="Quick Home Offer USA"
+              width={36}
+              height={36}
+              priority
+            />
             <span className="font-bold text-lg text-gray-900">
               Quick Home Offer<span className="text-green-700"> USA</span>
             </span>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AddressAutocomplete } from "./AddressAutocomplete";
 
 const PROPERTY_CONDITIONS = [
   { value: "excellent", label: "Excellent", description: "Move-in ready, well maintained" },
@@ -99,14 +100,14 @@ export function MultiStepForm() {
             Step 1 of 4 — What&apos;s your property address?
           </p>
           <div className="flex flex-col gap-3">
-            <input
-              type="text"
-              placeholder="Enter your property address"
+            <AddressAutocomplete
               value={formData.address}
-              onChange={(e) =>
-                setFormData((prev) => ({ ...prev, address: e.target.value }))
+              onChange={(value) =>
+                setFormData((prev) => ({ ...prev, address: value }))
               }
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-green-700 focus:border-green-700 outline-none"
+              onSelect={(place) =>
+                setFormData((prev) => ({ ...prev, address: place.address }))
+              }
             />
             <button
               onClick={() => formData.address.trim() && setStep(2)}

@@ -3,7 +3,7 @@
 
 export const SITE_URL = "https://quickhomeofferusa.com";
 export const COMPANY_NAME = "Quick Home Offer USA";
-export const PHONE = "(888) 555-0199"; // TODO: Replace with real number
+export const PHONE = "(813) 540-9555";
 export const EMAIL = "info@quickhomeofferusa.com";
 
 export function organizationSchema() {

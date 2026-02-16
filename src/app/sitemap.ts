@@ -50,6 +50,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  // Resource & guide pages
+  const guides = [
+    "how-to-sell-your-house-fast",
+    "selling-house-as-is",
+    "cash-buyer-vs-realtor",
+    "foreclosure-prevention",
+    "inherited-property-guide",
+  ];
+  const resourcePages: MetadataRoute.Sitemap = [
+    { url: `${SITE_URL}/resources`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.8 },
+    { url: `${SITE_URL}/resources/guides`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.8 },
+    ...guides.map((slug) => ({
+      url: `${SITE_URL}/resources/guides/${slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+  ];
+
   // "We buy houses" alt keyword pages
   const weBuyPages: MetadataRoute.Sitemap = citiesData.map((city) => ({
     url: `${SITE_URL}/we-buy-houses/${city.slug}`,
@@ -63,6 +82,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...situationPages,
     ...statePages,
     ...locationPages,
+    ...resourcePages,
     ...weBuyPages,
   ];
 }

@@ -11,6 +11,49 @@ export interface CityData {
   nearbyCities: string[];
 }
 
+export interface StateData {
+  name: string;
+  abbr: string;
+  slug: string;
+  cities: CityData[];
+}
+
+// State hub data — maps state slugs to their cities
+const STATE_SLUGS: Record<string, { name: string; abbr: string }> = {
+  florida: { name: "Florida", abbr: "FL" },
+  virginia: { name: "Virginia", abbr: "VA" },
+  maryland: { name: "Maryland", abbr: "MD" },
+  "new-york": { name: "New York", abbr: "NY" },
+  "north-carolina": { name: "North Carolina", abbr: "NC" },
+  georgia: { name: "Georgia", abbr: "GA" },
+};
+
+export function getAllStates(): StateData[] {
+  return Object.entries(STATE_SLUGS).map(([slug, info]) => ({
+    ...info,
+    slug,
+    cities: (citiesData as CityData[]).filter(
+      (c) => c.stateFull === info.name || c.state === info.abbr
+    ),
+  }));
+}
+
+export function getStateBySlug(slug: string): StateData | undefined {
+  const info = STATE_SLUGS[slug];
+  if (!info) return undefined;
+  return {
+    ...info,
+    slug,
+    cities: (citiesData as CityData[]).filter(
+      (c) => c.stateFull === info.name || c.state === info.abbr
+    ),
+  };
+}
+
+export function isStateSlug(slug: string): boolean {
+  return slug in STATE_SLUGS;
+}
+
 export function getAllCities(): CityData[] {
   return citiesData as CityData[];
 }

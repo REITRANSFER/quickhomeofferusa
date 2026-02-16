@@ -41,6 +41,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  // State hub pages
+  const states = ["florida", "virginia", "maryland", "new-york", "north-carolina", "georgia"];
+  const statePages: MetadataRoute.Sitemap = states.map((slug) => ({
+    url: `${SITE_URL}/sell-my-house-fast/${slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.9,
+  }));
+
   // "We buy houses" alt keyword pages
   const weBuyPages: MetadataRoute.Sitemap = citiesData.map((city) => ({
     url: `${SITE_URL}/we-buy-houses/${city.slug}`,
@@ -52,6 +61,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticPages,
     ...situationPages,
+    ...statePages,
     ...locationPages,
     ...weBuyPages,
   ];

@@ -1,0 +1,252 @@
+[
+  {
+    "city": "Tampa",
+    "state": "FL",
+    "stateFull": "Florida",
+    "slug": "tampa-fl",
+    "population": 403364,
+    "medianHomeValue": 388000,
+    "region": "Tampa Bay",
+    "nearbyCities": ["st-petersburg-fl", "clearwater-fl", "brandon-fl", "lakeland-fl"]
+  },
+  {
+    "city": "St. Petersburg",
+    "state": "FL",
+    "stateFull": "Florida",
+    "slug": "st-petersburg-fl",
+    "population": 261338,
+    "medianHomeValue": 365000,
+    "region": "Tampa Bay",
+    "nearbyCities": ["tampa-fl", "clearwater-fl", "largo-fl"]
+  },
+  {
+    "city": "Clearwater",
+    "state": "FL",
+    "stateFull": "Florida",
+    "slug": "clearwater-fl",
+    "population": 117295,
+    "medianHomeValue": 330000,
+    "region": "Tampa Bay",
+    "nearbyCities": ["tampa-fl", "st-petersburg-fl", "largo-fl"]
+  },
+  {
+    "city": "Brandon",
+    "state": "FL",
+    "stateFull": "Florida",
+    "slug": "brandon-fl",
+    "population": 115911,
+    "medianHomeValue": 345000,
+    "region": "Tampa Bay",
+    "nearbyCities": ["tampa-fl", "riverview-fl", "lakeland-fl"]
+  },
+  {
+    "city": "Lakeland",
+    "state": "FL",
+    "stateFull": "Florida",
+    "slug": "lakeland-fl",
+    "population": 115615,
+    "medianHomeValue": 290000,
+    "region": "Tampa Bay",
+    "nearbyCities": ["tampa-fl", "brandon-fl", "winter-haven-fl"]
+  },
+  {
+    "city": "Washington",
+    "state": "DC",
+    "stateFull": "District of Columbia",
+    "slug": "washington-dc",
+    "population": 689545,
+    "medianHomeValue": 635000,
+    "region": "DMV",
+    "nearbyCities": ["arlington-va", "alexandria-va", "bethesda-md", "silver-spring-md"]
+  },
+  {
+    "city": "Arlington",
+    "state": "VA",
+    "stateFull": "Virginia",
+    "slug": "arlington-va",
+    "population": 238643,
+    "medianHomeValue": 740000,
+    "region": "DMV",
+    "nearbyCities": ["washington-dc", "alexandria-va", "fairfax-va"]
+  },
+  {
+    "city": "Alexandria",
+    "state": "VA",
+    "stateFull": "Virginia",
+    "slug": "alexandria-va",
+    "population": 159467,
+    "medianHomeValue": 590000,
+    "region": "DMV",
+    "nearbyCities": ["washington-dc", "arlington-va", "fairfax-va"]
+  },
+  {
+    "city": "Bethesda",
+    "state": "MD",
+    "stateFull": "Maryland",
+    "slug": "bethesda-md",
+    "population": 68056,
+    "medianHomeValue": 945000,
+    "region": "DMV",
+    "nearbyCities": ["washington-dc", "silver-spring-md", "rockville-md"]
+  },
+  {
+    "city": "Silver Spring",
+    "state": "MD",
+    "stateFull": "Maryland",
+    "slug": "silver-spring-md",
+    "population": 81015,
+    "medianHomeValue": 485000,
+    "region": "DMV",
+    "nearbyCities": ["washington-dc", "bethesda-md", "rockville-md"]
+  },
+  {
+    "city": "Fairfax",
+    "state": "VA",
+    "stateFull": "Virginia",
+    "slug": "fairfax-va",
+    "population": 24019,
+    "medianHomeValue": 620000,
+    "region": "DMV",
+    "nearbyCities": ["arlington-va", "alexandria-va", "washington-dc"]
+  },
+  {
+    "city": "Rockville",
+    "state": "MD",
+    "stateFull": "Maryland",
+    "slug": "rockville-md",
+    "population": 67117,
+    "medianHomeValue": 575000,
+    "region": "DMV",
+    "nearbyCities": ["bethesda-md", "silver-spring-md", "gaithersburg-md"]
+  },
+  {
+    "city": "Queens",
+    "state": "NY",
+    "stateFull": "New York",
+    "slug": "queens-ny",
+    "population": 2272771,
+    "medianHomeValue": 625000,
+    "region": "New York Metro",
+    "nearbyCities": ["nassau-county-ny", "brooklyn-ny", "long-island-ny"]
+  },
+  {
+    "city": "Nassau County",
+    "state": "NY",
+    "stateFull": "New York",
+    "slug": "nassau-county-ny",
+    "population": 1395774,
+    "medianHomeValue": 620000,
+    "region": "New York Metro",
+    "nearbyCities": ["queens-ny", "suffolk-county-ny", "long-island-ny"]
+  },
+  {
+    "city": "Suffolk County",
+    "state": "NY",
+    "stateFull": "New York",
+    "slug": "suffolk-county-ny",
+    "population": 1525920,
+    "medianHomeValue": 530000,
+    "region": "New York Metro",
+    "nearbyCities": ["nassau-county-ny", "queens-ny", "long-island-ny"]
+  },
+  {
+    "city": "Long Island",
+    "state": "NY",
+    "stateFull": "New York",
+    "slug": "long-island-ny",
+    "population": 2921000,
+    "medianHomeValue": 575000,
+    "region": "New York Metro",
+    "nearbyCities": ["queens-ny", "nassau-county-ny", "suffolk-county-ny"]
+  },
+  {
+    "city": "Raleigh",
+    "state": "NC",
+    "stateFull": "North Carolina",
+    "slug": "raleigh-nc",
+    "population": 474069,
+    "medianHomeValue": 410000,
+    "region": "Raleigh-Durham",
+    "nearbyCities": ["durham-nc", "cary-nc", "wake-forest-nc"]
+  },
+  {
+    "city": "Durham",
+    "state": "NC",
+    "stateFull": "North Carolina",
+    "slug": "durham-nc",
+    "population": 283506,
+    "medianHomeValue": 360000,
+    "region": "Raleigh-Durham",
+    "nearbyCities": ["raleigh-nc", "chapel-hill-nc", "cary-nc"]
+  },
+  {
+    "city": "Cary",
+    "state": "NC",
+    "stateFull": "North Carolina",
+    "slug": "cary-nc",
+    "population": 174721,
+    "medianHomeValue": 480000,
+    "region": "Raleigh-Durham",
+    "nearbyCities": ["raleigh-nc", "durham-nc", "apex-nc"]
+  },
+  {
+    "city": "Chapel Hill",
+    "state": "NC",
+    "stateFull": "North Carolina",
+    "slug": "chapel-hill-nc",
+    "population": 61960,
+    "medianHomeValue": 475000,
+    "region": "Raleigh-Durham",
+    "nearbyCities": ["durham-nc", "raleigh-nc", "cary-nc"]
+  },
+  {
+    "city": "Atlanta",
+    "state": "GA",
+    "stateFull": "Georgia",
+    "slug": "atlanta-ga",
+    "population": 499127,
+    "medianHomeValue": 395000,
+    "region": "Atlanta Metro",
+    "nearbyCities": ["marietta-ga", "decatur-ga", "sandy-springs-ga", "roswell-ga"]
+  },
+  {
+    "city": "Marietta",
+    "state": "GA",
+    "stateFull": "Georgia",
+    "slug": "marietta-ga",
+    "population": 60972,
+    "medianHomeValue": 370000,
+    "region": "Atlanta Metro",
+    "nearbyCities": ["atlanta-ga", "kennesaw-ga", "sandy-springs-ga"]
+  },
+  {
+    "city": "Decatur",
+    "state": "GA",
+    "stateFull": "Georgia",
+    "slug": "decatur-ga",
+    "population": 24814,
+    "medianHomeValue": 425000,
+    "region": "Atlanta Metro",
+    "nearbyCities": ["atlanta-ga", "stone-mountain-ga"]
+  },
+  {
+    "city": "Sandy Springs",
+    "state": "GA",
+    "stateFull": "Georgia",
+    "slug": "sandy-springs-ga",
+    "population": 108080,
+    "medianHomeValue": 480000,
+    "region": "Atlanta Metro",
+    "nearbyCities": ["atlanta-ga", "marietta-ga", "roswell-ga"]
+  },
+  {
+    "city": "Roswell",
+    "state": "GA",
+    "stateFull": "Georgia",
+    "slug": "roswell-ga",
+    "population": 94034,
+    "medianHomeValue": 465000,
+    "region": "Atlanta Metro",
+    "nearbyCities": ["atlanta-ga", "sandy-springs-ga", "alpharetta-ga"]
+  }
+]

@@ -16,11 +16,22 @@ export async function POST(request: Request) {
         email: body.email || "",
         phone: body.phone || "",
         address: body.address || "",
+        reason: body.reason || "",
         condition: body.condition || "",
         timeline: body.timeline || "",
         message: body.message || "",
         source: body.source || "multi-step-form",
         page_url: body.page_url || "",
+        // Property details (from second form)
+        bedrooms: body.bedrooms || "",
+        bathrooms: body.bathrooms || "",
+        sqft: body.sqft || "",
+        year_built: body.year_built || "",
+        garage: body.garage || "",
+        occupied: body.occupied || "",
+        mortgage_balance: body.mortgage_balance || "",
+        asking_price: body.asking_price || "",
+        additional_notes: body.additional_notes || "",
       }),
     });
   } catch (err) {

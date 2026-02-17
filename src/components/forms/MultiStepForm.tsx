@@ -3,11 +3,22 @@
 import { useState } from "react";
 import { AddressAutocomplete } from "./AddressAutocomplete";
 
+const REASONS_FOR_SELLING = [
+  { value: "foreclosure", label: "Foreclosure", description: "Facing or behind on mortgage" },
+  { value: "divorce", label: "Divorce", description: "Going through a separation" },
+  { value: "inherited", label: "Inherited Property", description: "Received through estate or probate" },
+  { value: "relocation", label: "Relocation", description: "Moving for work or family" },
+  { value: "behind-on-payments", label: "Behind on Payments", description: "Struggling with monthly costs" },
+  { value: "tired-landlord", label: "Tired Landlord", description: "Done dealing with tenants" },
+  { value: "downsizing", label: "Downsizing", description: "Moving to a smaller home" },
+  { value: "other", label: "Other", description: "Another reason" },
+];
+
 const PROPERTY_CONDITIONS = [
-  { value: "excellent", label: "Excellent", description: "Move-in ready, well maintained" },
-  { value: "good", label: "Good", description: "Minor cosmetic updates needed" },
-  { value: "fair", label: "Fair", description: "Needs some repairs" },
-  { value: "poor", label: "Poor", description: "Major repairs or damage" },
+  { value: "excellent", label: "Excellent", description: "Move-in ready — updated kitchen, baths, roof, HVAC all in great shape" },
+  { value: "good", label: "Good", description: "Solid overall — may need minor cosmetic work like paint or carpet" },
+  { value: "fair", label: "Fair", description: "Needs moderate repairs — roof, HVAC, plumbing, or electrical issues" },
+  { value: "poor", label: "Poor", description: "Major work needed — structural damage, fire, mold, or uninhabitable" },
 ];
 
 const TIMELINES = [
@@ -19,6 +30,7 @@ const TIMELINES = [
 
 interface FormData {
   address: string;
+  reason: string;
   condition: string;
   timeline: string;
   name: string;
@@ -27,10 +39,7 @@ interface FormData {
 }
 
 function formatPhone(value: string): string {
-  // Strip everything except digits
   const digits = value.replace(/\D/g, "");
-
-  // Remove leading 1 if present (we add +1 prefix automatically)
   const national = digits.startsWith("1") && digits.length > 10
     ? digits.slice(1)
     : digits;
@@ -45,6 +54,7 @@ export function MultiStepForm() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState<FormData>({
     address: "",
+    reason: "",
     condition: "",
     timeline: "",
     name: "",
@@ -53,7 +63,7 @@ export function MultiStepForm() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const totalSteps = 4;
+  const totalSteps = 5;
 
   function handleSelect(field: keyof FormData, value: string) {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -69,24 +79,28 @@ export function MultiStepForm() {
         body: JSON.stringify({ ...formData, source: "multi-step-form", page_url: window.location.href }),
       });
     } catch {
-      // Silently handle — we still show success
+      // Silently handle
     }
+    // Store data for the property-details page
+    localStorage.setItem("leadData", JSON.stringify(formData));
     setSubmitted(true);
   }
 
   if (submitted) {
+    // Redirect to property details page for longer form
+    if (typeof window !== "undefined") {
+      window.location.href = "/property-details";
+    }
     return (
       <div className="bg-blue-50 border border-blue-200 rounded-2xl p-8 text-center">
         <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg className="w-8 h-8 text-blue-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          <svg className="w-8 h-8 text-blue-800 animate-spin" fill="none" viewBox="0 0 24 24">
+            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
           </svg>
         </div>
-        <h3 className="text-xl font-bold text-gray-900 mb-2">We Got Your Info!</h3>
-        <p className="text-gray-600">
-          We&apos;re reviewing your property now. Expect a call from our team within
-          the next few hours with your no-obligation cash offer.
-        </p>
+        <h3 className="text-xl font-bold text-gray-900 mb-2">One moment...</h3>
+        <p className="text-gray-600">Taking you to the next step.</p>
       </div>
     );
   }
@@ -112,7 +126,7 @@ export function MultiStepForm() {
             Get Your Free Cash Offer
           </h3>
           <p className="text-base text-gray-500 mb-5">
-            Step 1 of 4 — What&apos;s your property address?
+            Step 1 of {totalSteps} — What&apos;s your property address?
           </p>
           <div className="flex flex-col gap-3">
             <AddressAutocomplete
@@ -135,16 +149,44 @@ export function MultiStepForm() {
         </div>
       )}
 
-      {/* Step 2: Condition */}
+      {/* Step 2: Reason for Selling */}
       {step === 2 && (
+        <div>
+          <h3 className="text-lg font-bold text-gray-900 mb-1">
+            Reason for Selling
+          </h3>
+          <p className="text-base text-gray-500 mb-5">
+            Step 2 of {totalSteps} — Why are you looking to sell?
+          </p>
+          <div className="grid grid-cols-2 gap-3">
+            {REASONS_FOR_SELLING.map((option) => (
+              <button
+                key={option.value}
+                onClick={() => handleSelect("reason", option.value)}
+                className={`p-4 border-2 rounded-xl text-left transition-all hover:border-blue-800 hover:bg-blue-50 ${
+                  formData.reason === option.value
+                    ? "border-blue-800 bg-blue-50"
+                    : "border-gray-200"
+                }`}
+              >
+                <span className="font-semibold text-gray-900 block">{option.label}</span>
+                <span className="text-base text-gray-500">{option.description}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Step 3: Condition */}
+      {step === 3 && (
         <div>
           <h3 className="text-lg font-bold text-gray-900 mb-1">
             Property Condition
           </h3>
           <p className="text-base text-gray-500 mb-5">
-            Step 2 of 4 — What condition is your property in?
+            Step 3 of {totalSteps} — What condition is your property in?
           </p>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {PROPERTY_CONDITIONS.map((option) => (
               <button
                 key={option.value}
@@ -163,14 +205,14 @@ export function MultiStepForm() {
         </div>
       )}
 
-      {/* Step 3: Timeline */}
-      {step === 3 && (
+      {/* Step 4: Timeline */}
+      {step === 4 && (
         <div>
           <h3 className="text-lg font-bold text-gray-900 mb-1">
             Selling Timeline
           </h3>
           <p className="text-base text-gray-500 mb-5">
-            Step 3 of 4 — How quickly do you need to sell?
+            Step 4 of {totalSteps} — How quickly do you need to sell?
           </p>
           <div className="grid grid-cols-2 gap-3">
             {TIMELINES.map((option) => (
@@ -191,14 +233,14 @@ export function MultiStepForm() {
         </div>
       )}
 
-      {/* Step 4: Contact info */}
-      {step === 4 && (
+      {/* Step 5: Contact info */}
+      {step === 5 && (
         <form onSubmit={handleSubmit}>
           <h3 className="text-lg font-bold text-gray-900 mb-1">
             Almost Done!
           </h3>
           <p className="text-base text-gray-500 mb-5">
-            Step 4 of 4 — Where should we send your cash offer?
+            Step {totalSteps} of {totalSteps} — Where should we send your cash offer?
           </p>
           <div className="flex flex-col gap-3">
             <input

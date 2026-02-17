@@ -111,7 +111,7 @@ export function MultiStepForm() {
           <h3 className="text-lg font-bold text-gray-900 mb-1">
             Get Your Free Cash Offer
           </h3>
-          <p className="text-sm text-gray-500 mb-5">
+          <p className="text-base text-gray-500 mb-5">
             Step 1 of 4 — What&apos;s your property address?
           </p>
           <div className="flex flex-col gap-3">
@@ -141,7 +141,7 @@ export function MultiStepForm() {
           <h3 className="text-lg font-bold text-gray-900 mb-1">
             Property Condition
           </h3>
-          <p className="text-sm text-gray-500 mb-5">
+          <p className="text-base text-gray-500 mb-5">
             Step 2 of 4 — What condition is your property in?
           </p>
           <div className="grid grid-cols-2 gap-3">
@@ -156,7 +156,7 @@ export function MultiStepForm() {
                 }`}
               >
                 <span className="font-semibold text-gray-900 block">{option.label}</span>
-                <span className="text-xs text-gray-500">{option.description}</span>
+                <span className="text-base text-gray-500">{option.description}</span>
               </button>
             ))}
           </div>
@@ -169,7 +169,7 @@ export function MultiStepForm() {
           <h3 className="text-lg font-bold text-gray-900 mb-1">
             Selling Timeline
           </h3>
-          <p className="text-sm text-gray-500 mb-5">
+          <p className="text-base text-gray-500 mb-5">
             Step 3 of 4 — How quickly do you need to sell?
           </p>
           <div className="grid grid-cols-2 gap-3">
@@ -184,7 +184,7 @@ export function MultiStepForm() {
                 }`}
               >
                 <span className="font-semibold text-gray-900 block">{option.label}</span>
-                <span className="text-xs text-gray-500">{option.description}</span>
+                <span className="text-base text-gray-500">{option.description}</span>
               </button>
             ))}
           </div>
@@ -197,7 +197,7 @@ export function MultiStepForm() {
           <h3 className="text-lg font-bold text-gray-900 mb-1">
             Almost Done!
           </h3>
-          <p className="text-sm text-gray-500 mb-5">
+          <p className="text-base text-gray-500 mb-5">
             Step 4 of 4 — Where should we send your cash offer?
           </p>
           <div className="flex flex-col gap-3">
@@ -237,7 +237,7 @@ export function MultiStepForm() {
             >
               Get My Cash Offer
             </button>
-            <p className="text-xs text-gray-400 text-center">
+            <p className="text-base text-gray-400 text-center">
               100% free. No obligation. Your info is secure.
             </p>
           </div>
@@ -248,7 +248,7 @@ export function MultiStepForm() {
       {step > 1 && !submitted && (
         <button
           onClick={() => setStep(step - 1)}
-          className="mt-4 text-sm text-gray-500 hover:text-gray-700"
+          className="mt-4 text-base text-gray-500 hover:text-gray-700"
         >
           &larr; Back
         </button>

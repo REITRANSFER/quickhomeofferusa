@@ -43,14 +43,14 @@ export default function GuidesIndexPage() {
                 href={`/resources/guides/${guide.slug}`}
                 className="block bg-white border border-gray-200 rounded-xl p-6 hover:border-blue-800 hover:shadow-sm transition-all"
               >
-                <span className="text-xs font-medium text-blue-800 bg-blue-50 px-2 py-1 rounded-full">
+                <span className="text-base font-medium text-blue-800 bg-blue-50 px-2 py-1 rounded-full">
                   {guide.category}
                 </span>
                 <h2 className="text-xl font-bold text-gray-900 mt-3">
                   {guide.title}
                 </h2>
                 <p className="text-gray-600 mt-2">{guide.excerpt}</p>
-                <div className="flex items-center gap-3 mt-3 text-sm text-gray-400">
+                <div className="flex items-center gap-3 mt-3 text-base text-gray-400">
                   <span>{guide.readTime}</span>
                   <span>·</span>
                   <time dateTime={guide.dateModified}>

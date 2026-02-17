@@ -65,14 +65,14 @@ export default async function GuidePage({ params }: PageProps) {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <header className="mb-10">
-            <span className="text-sm font-medium text-blue-800 mb-2 block">
+            <span className="text-base font-medium text-blue-800 mb-2 block">
               {guide.category}
             </span>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               {guide.title}
             </h1>
             <p className="text-lg text-gray-600 mb-4">{guide.excerpt}</p>
-            <div className="flex items-center gap-4 text-sm text-gray-500">
+            <div className="flex items-center gap-4 text-base text-gray-500">
               <span>By {COMPANY_NAME}</span>
               <span>·</span>
               <span>{guide.readTime}</span>
@@ -96,7 +96,7 @@ export default async function GuidePage({ params }: PageProps) {
                 <li key={i}>
                   <a
                     href={`#section-${i}`}
-                    className="text-sm text-blue-800 hover:underline"
+                    className="text-base text-blue-800 hover:underline"
                   >
                     {section.heading}
                   </a>
@@ -105,7 +105,7 @@ export default async function GuidePage({ params }: PageProps) {
               <li>
                 <a
                   href="#faq"
-                  className="text-sm text-blue-800 hover:underline"
+                  className="text-base text-blue-800 hover:underline"
                 >
                   Frequently Asked Questions
                 </a>
@@ -151,7 +151,7 @@ export default async function GuidePage({ params }: PageProps) {
                       <p className="font-semibold text-gray-900">
                         {related.title}
                       </p>
-                      <p className="text-sm text-gray-500">{related.readTime}</p>
+                      <p className="text-base text-gray-500">{related.readTime}</p>
                     </div>
                     <span className="text-blue-800 font-bold">→</span>
                   </Link>
@@ -177,7 +177,7 @@ export default async function GuidePage({ params }: PageProps) {
                     <Link
                       key={path}
                       href={path}
-                      className="bg-gray-50 border border-gray-200 px-4 py-2 rounded-lg text-sm hover:border-blue-800 hover:text-blue-800 transition-colors"
+                      className="bg-gray-50 border border-gray-200 px-4 py-2 rounded-lg text-base hover:border-blue-800 hover:text-blue-800 transition-colors"
                     >
                       {name}
                     </Link>

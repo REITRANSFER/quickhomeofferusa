@@ -60,19 +60,19 @@ export function StateHub({ state }: { state: StateData }) {
               <p className="text-3xl font-bold text-blue-800">
                 {state.cities.length}
               </p>
-              <p className="text-sm text-gray-600 mt-1">Markets Served</p>
+              <p className="text-base text-gray-600 mt-1">Markets Served</p>
             </div>
             <div className="bg-blue-50 p-6 rounded-xl text-center">
               <p className="text-3xl font-bold text-blue-800">
                 {formatPopulation(totalPopulation)}
               </p>
-              <p className="text-sm text-gray-600 mt-1">Combined Population</p>
+              <p className="text-base text-gray-600 mt-1">Combined Population</p>
             </div>
             <div className="bg-blue-50 p-6 rounded-xl text-center">
               <p className="text-3xl font-bold text-blue-800">
                 {formatCurrency(avgHomeValue)}
               </p>
-              <p className="text-sm text-gray-600 mt-1">Avg. Home Value</p>
+              <p className="text-base text-gray-600 mt-1">Avg. Home Value</p>
             </div>
           </div>
 
@@ -90,7 +90,7 @@ export function StateHub({ state }: { state: StateData }) {
                   <p className="font-bold text-gray-900">
                     {city.city}, {city.state}
                   </p>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-base text-gray-500">
                     Pop. {formatPopulation(city.population)} · Median{" "}
                     {formatCurrency(city.medianHomeValue)}
                   </p>
@@ -128,7 +128,7 @@ export function StateHub({ state }: { state: StateData }) {
                 className="bg-white p-6 rounded-xl border border-gray-200"
               >
                 <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-600 text-base leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -152,7 +152,7 @@ export function StateHub({ state }: { state: StateData }) {
               <Link
                 key={situation.name}
                 href={situation.href}
-                className="bg-gray-50 border border-gray-200 px-4 py-2 rounded-lg text-sm hover:border-blue-800 hover:text-blue-800 transition-colors"
+                className="bg-gray-50 border border-gray-200 px-4 py-2 rounded-lg text-base hover:border-blue-800 hover:text-blue-800 transition-colors"
               >
                 {situation.name}
               </Link>

@@ -46,11 +46,11 @@ export function Footer() {
                 className="h-10 w-auto"
               />
             </Link>
-            <p className="mt-4 text-sm leading-relaxed">
+            <p className="mt-4 text-base leading-relaxed">
               We buy houses fast for cash in any condition. No fees, no commissions,
               no repairs. Get a fair offer in 24 hours.
             </p>
-            <div className="mt-4 space-y-2 text-sm">
+            <div className="mt-4 space-y-2 text-base">
               <p>
                 <a href={`tel:${PHONE.replace(/[^0-9+]/g, "")}`} className="hover:text-white">
                   {PHONE}
@@ -66,7 +66,7 @@ export function Footer() {
 
           <div>
             <h3 className="text-white font-semibold mb-4">Markets We Serve</h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-base">
               {MARKET_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="hover:text-white transition-colors">
@@ -79,7 +79,7 @@ export function Footer() {
 
           <div>
             <h3 className="text-white font-semibold mb-4">Situations</h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-base">
               {SITUATION_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="hover:text-white transition-colors">
@@ -92,7 +92,7 @@ export function Footer() {
 
           <div>
             <h3 className="text-white font-semibold mb-4">Company</h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-base">
               {COMPANY_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="hover:text-white transition-colors">
@@ -104,7 +104,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+        <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-base text-gray-500">
           <p>&copy; {new Date().getFullYear()} {COMPANY_NAME}. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="/privacy" className="hover:text-gray-300">Privacy Policy</Link>

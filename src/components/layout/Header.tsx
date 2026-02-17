@@ -39,7 +39,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-gray-600 hover:text-blue-800 transition-colors"
+                className="text-base text-gray-600 hover:text-blue-800 transition-colors"
               >
                 {link.label}
               </Link>
@@ -50,13 +50,13 @@ export function Header() {
           <div className="hidden md:flex items-center gap-4">
             <a
               href={`tel:${PHONE.replace(/[^0-9+]/g, "")}`}
-              className="text-sm font-medium text-gray-700 hover:text-blue-800"
+              className="text-base font-medium text-gray-700 hover:text-blue-800"
             >
               {PHONE}
             </a>
             <Link
               href="/#get-offer"
-              className="bg-red-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-red-700 transition-colors"
+              className="bg-red-600 text-white px-5 py-2.5 rounded-lg text-base font-semibold hover:bg-red-700 transition-colors"
             >
               Get My Cash Offer
             </Link>

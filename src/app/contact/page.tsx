@@ -43,7 +43,7 @@ export default function ContactPage() {
                   >
                     {PHONE}
                   </a>
-                  <p className="text-sm text-gray-500 mt-1">Monday - Friday, 8am - 8pm EST</p>
+                  <p className="text-base text-gray-500 mt-1">Monday - Friday, 8am - 8pm EST</p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
@@ -53,11 +53,11 @@ export default function ContactPage() {
                   >
                     {EMAIL}
                   </a>
-                  <p className="text-sm text-gray-500 mt-1">We respond within 2-4 hours</p>
+                  <p className="text-base text-gray-500 mt-1">We respond within 2-4 hours</p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Markets We Serve</h3>
-                  <ul className="text-gray-600 text-sm space-y-1">
+                  <ul className="text-gray-600 text-base space-y-1">
                     <li>Tampa Bay, FL</li>
                     <li>DMV (DC, Maryland, Virginia)</li>
                     <li>New York (Queens, Nassau, Suffolk)</li>

@@ -64,7 +64,7 @@ export default function HomePage() {
               </p>
 
               {/* Trust signals */}
-              <div className="mt-8 flex flex-wrap gap-6 text-sm text-gray-500">
+              <div className="mt-8 flex flex-wrap gap-6 text-base text-gray-500">
                 <div className="flex items-center gap-2">
                   <span className="text-yellow-500">★★★★★</span>
                   <span>4.9/5 from 200+ homeowners</span>
@@ -150,7 +150,7 @@ export default function HomePage() {
                   <th className="py-4 px-6 text-gray-400 font-bold">Traditional Agent</th>
                 </tr>
               </thead>
-              <tbody className="text-sm">
+              <tbody className="text-base">
                 {[
                   ["Commissions & Fees", "None — $0", "5-6% ($15K-$25K+)"],
                   ["Repairs Needed", "None — sell as-is", "$10K-$30K average"],
@@ -192,7 +192,7 @@ export default function HomePage() {
               >
                 <div className="text-3xl mb-3">{situation.icon}</div>
                 <h3 className="font-bold text-gray-900 mb-1">{situation.label}</h3>
-                <p className="text-sm text-gray-600">{situation.description}</p>
+                <p className="text-base text-gray-600">{situation.description}</p>
               </Link>
             ))}
           </div>
@@ -231,7 +231,7 @@ export default function HomePage() {
                 key={testimonial.name}
                 className="bg-white rounded-xl p-6 shadow-sm border border-blue-100"
               >
-                <div className="text-yellow-500 text-sm mb-3">
+                <div className="text-yellow-500 text-base mb-3">
                   {"★".repeat(testimonial.stars)}
                 </div>
                 <p className="text-gray-700 leading-relaxed mb-4">
@@ -239,7 +239,7 @@ export default function HomePage() {
                 </p>
                 <div>
                   <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                  <p className="text-sm text-gray-500">{testimonial.location}</p>
+                  <p className="text-base text-gray-500">{testimonial.location}</p>
                 </div>
               </div>
             ))}
@@ -272,7 +272,7 @@ export default function HomePage() {
               <Link
                 key={market.href}
                 href={market.href}
-                className="text-center py-3 px-4 border border-gray-200 rounded-lg hover:border-blue-800 hover:bg-blue-50 transition-all text-sm font-medium text-gray-700 hover:text-blue-800"
+                className="text-center py-3 px-4 border border-gray-200 rounded-lg hover:border-blue-800 hover:bg-blue-50 transition-all text-base font-medium text-gray-700 hover:text-blue-800"
               >
                 {market.label}
               </Link>

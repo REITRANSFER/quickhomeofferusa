@@ -111,10 +111,10 @@ export default function ReviewsPage() {
                 className="bg-white border border-gray-200 rounded-xl p-6"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <div className="text-yellow-500 text-sm">
+                  <div className="text-yellow-500 text-base">
                     {"★".repeat(review.stars)}
                   </div>
-                  <span className="text-xs bg-blue-100 text-blue-900 px-2 py-1 rounded-full">
+                  <span className="text-base bg-blue-100 text-blue-900 px-2 py-1 rounded-full">
                     {review.situation}
                   </span>
                 </div>
@@ -123,7 +123,7 @@ export default function ReviewsPage() {
                 </p>
                 <div>
                   <p className="font-semibold text-gray-900">{review.name}</p>
-                  <p className="text-sm text-gray-500">{review.location}</p>
+                  <p className="text-base text-gray-500">{review.location}</p>
                 </div>
               </div>
             ))}

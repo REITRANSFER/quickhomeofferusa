@@ -70,7 +70,7 @@ export default function AboutPage() {
             ].map((value) => (
               <div key={value.title} className="bg-gray-50 p-6 rounded-xl">
                 <h3 className="font-bold text-gray-900 mb-2">{value.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{value.desc}</p>
+                <p className="text-gray-600 text-base leading-relaxed">{value.desc}</p>
               </div>
             ))}
           </div>
@@ -85,7 +85,7 @@ export default function AboutPage() {
             ].map((stat) => (
               <div key={stat.label} className="bg-blue-50 p-6 rounded-xl">
                 <p className="text-3xl font-bold text-blue-800">{stat.number}</p>
-                <p className="text-sm text-gray-600 mt-1">{stat.label}</p>
+                <p className="text-base text-gray-600 mt-1">{stat.label}</p>
               </div>
             ))}
           </div>

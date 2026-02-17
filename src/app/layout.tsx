@@ -53,7 +53,7 @@ export default function RootLayout({
       <head>
         <JsonLd data={organizationSchema()} />
       </head>
-      <body className={`${inter.className} antialiased bg-white text-gray-900`}>
+      <body className={`${inter.className} antialiased bg-white text-gray-900 text-lg`}>
         <Header />
         <main>{children}</main>
         <Footer />

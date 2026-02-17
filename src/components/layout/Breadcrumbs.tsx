@@ -17,7 +17,7 @@ export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
     <>
       <JsonLd data={breadcrumbSchema(schemaItems)} />
       <nav aria-label="Breadcrumb" className="py-3">
-        <ol className="flex flex-wrap gap-1 text-sm text-gray-500">
+        <ol className="flex flex-wrap gap-1 text-base text-gray-500">
           {items.map((item, i) => (
             <li key={item.href} className="flex items-center gap-1">
               {i > 0 && <span className="text-gray-300">/</span>}

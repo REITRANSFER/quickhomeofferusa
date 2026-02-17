@@ -138,7 +138,7 @@ export default async function WeBuyHousesPage({ params }: PageProps) {
           <div className="grid sm:grid-cols-3 gap-6 mb-16">
             <div>
               <h3 className="font-bold text-gray-900 mb-3">Property Types</h3>
-              <ul className="space-y-2 text-gray-600 text-sm">
+              <ul className="space-y-2 text-gray-600 text-base">
                 <li>• Single-family homes</li>
                 <li>• Condos & townhomes</li>
                 <li>• Duplexes & multi-family</li>
@@ -148,7 +148,7 @@ export default async function WeBuyHousesPage({ params }: PageProps) {
             </div>
             <div>
               <h3 className="font-bold text-gray-900 mb-3">Any Condition</h3>
-              <ul className="space-y-2 text-gray-600 text-sm">
+              <ul className="space-y-2 text-gray-600 text-base">
                 <li>• Needs major repairs</li>
                 <li>• Fire or water damage</li>
                 <li>• Mold or structural issues</li>
@@ -158,7 +158,7 @@ export default async function WeBuyHousesPage({ params }: PageProps) {
             </div>
             <div>
               <h3 className="font-bold text-gray-900 mb-3">Any Situation</h3>
-              <ul className="space-y-2 text-gray-600 text-sm">
+              <ul className="space-y-2 text-gray-600 text-base">
                 <li>• Foreclosure or pre-foreclosure</li>
                 <li>• Divorce or separation</li>
                 <li>• Inherited or probate property</li>
@@ -180,7 +180,7 @@ export default async function WeBuyHousesPage({ params }: PageProps) {
                 <p className="text-2xl font-bold text-blue-800">
                   {stat.number}
                 </p>
-                <p className="text-sm text-gray-600 mt-1">{stat.label}</p>
+                <p className="text-base text-gray-600 mt-1">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -258,7 +258,7 @@ export default async function WeBuyHousesPage({ params }: PageProps) {
                 <Link
                   key={nearby.slug}
                   href={`/we-buy-houses/${nearby.slug}`}
-                  className="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm hover:border-blue-800 hover:text-blue-800 transition-colors"
+                  className="bg-white border border-gray-200 px-4 py-2 rounded-lg text-base hover:border-blue-800 hover:text-blue-800 transition-colors"
                 >
                   {nearby.city}, {nearby.state}
                 </Link>

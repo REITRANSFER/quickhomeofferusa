@@ -142,7 +142,7 @@ export default function VacantPropertyPage() {
                   {col.items.map((item) => (
                     <li
                       key={item}
-                      className="text-gray-600 text-sm flex items-start gap-2"
+                      className="text-gray-600 text-base flex items-start gap-2"
                     >
                       <span className="text-red-500 mt-0.5">•</span>
                       {item}
@@ -170,7 +170,7 @@ export default function VacantPropertyPage() {
                 className="flex items-start gap-3 bg-gray-50 p-4 rounded-lg"
               >
                 <span className="text-blue-800 font-bold mt-0.5">→</span>
-                <p className="text-gray-700 text-sm">{reason}</p>
+                <p className="text-gray-700 text-base">{reason}</p>
               </div>
             ))}
           </div>

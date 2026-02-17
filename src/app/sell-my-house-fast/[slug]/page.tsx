@@ -106,17 +106,17 @@ export default async function CityPage({ params }: PageProps) {
               <p className="text-3xl font-bold text-blue-800">
                 {formatPopulation(city.population)}
               </p>
-              <p className="text-sm text-gray-600 mt-1">Population</p>
+              <p className="text-base text-gray-600 mt-1">Population</p>
             </div>
             <div className="bg-blue-50 p-6 rounded-xl text-center">
               <p className="text-3xl font-bold text-blue-800">
                 {formatCurrency(city.medianHomeValue)}
               </p>
-              <p className="text-sm text-gray-600 mt-1">Median Home Value</p>
+              <p className="text-base text-gray-600 mt-1">Median Home Value</p>
             </div>
             <div className="bg-blue-50 p-6 rounded-xl text-center">
               <p className="text-3xl font-bold text-blue-800">7-14 Days</p>
-              <p className="text-sm text-gray-600 mt-1">Our Avg. Closing Time</p>
+              <p className="text-base text-gray-600 mt-1">Our Avg. Closing Time</p>
             </div>
           </div>
 
@@ -263,7 +263,7 @@ export default async function CityPage({ params }: PageProps) {
                 <Link
                   key={nearby.slug}
                   href={`/sell-my-house-fast/${nearby.slug}`}
-                  className="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm hover:border-blue-800 hover:text-blue-800 transition-colors"
+                  className="bg-white border border-gray-200 px-4 py-2 rounded-lg text-base hover:border-blue-800 hover:text-blue-800 transition-colors"
                 >
                   {nearby.city}, {nearby.state}
                 </Link>

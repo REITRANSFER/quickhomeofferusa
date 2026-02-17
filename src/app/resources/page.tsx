@@ -53,14 +53,14 @@ export default function ResourcesPage() {
               >
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <span className="text-xs font-medium text-blue-800 bg-blue-50 px-2 py-1 rounded-full">
+                    <span className="text-base font-medium text-blue-800 bg-blue-50 px-2 py-1 rounded-full">
                       {guide.category}
                     </span>
                     <h3 className="text-lg font-bold text-gray-900 mt-2">
                       {guide.title}
                     </h3>
-                    <p className="text-gray-600 text-sm mt-1">{guide.excerpt}</p>
-                    <p className="text-xs text-gray-400 mt-2">{guide.readTime}</p>
+                    <p className="text-gray-600 text-base mt-1">{guide.excerpt}</p>
+                    <p className="text-base text-gray-400 mt-2">{guide.readTime}</p>
                   </div>
                   <span className="text-blue-800 font-bold text-xl flex-shrink-0">
                     →

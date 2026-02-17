@@ -162,7 +162,7 @@ export default function ForeclosurePage() {
                 <h3 className="font-bold text-gray-900 mb-2">
                   {option.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-600 text-base leading-relaxed">
                   {option.desc}
                 </p>
               </div>

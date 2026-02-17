@@ -153,7 +153,7 @@ export default function ProbatePage() {
                 className="bg-white p-6 rounded-xl border border-gray-200"
               >
                 <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-600 text-base leading-relaxed">
                   {item.desc}
                 </p>
               </div>

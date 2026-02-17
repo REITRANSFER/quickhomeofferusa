@@ -32,7 +32,7 @@ export function ContactForm() {
       await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, source: "contact" }),
+        body: JSON.stringify({ ...data, source: "contact", page_url: window.location.href }),
       });
     } catch {
       // Silently handle — still show success

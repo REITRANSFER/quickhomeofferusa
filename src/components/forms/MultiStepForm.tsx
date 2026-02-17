@@ -66,7 +66,7 @@ export function MultiStepForm() {
       await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, source: "multi-step-form", page_url: window.location.href }),
       });
     } catch {
       // Silently handle — we still show success

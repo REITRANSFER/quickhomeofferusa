@@ -22,17 +22,15 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center">
             <Image
-              src="/logo.svg"
+              src="/logo.jpeg"
               alt="Quick Home Offer USA"
-              width={36}
-              height={36}
+              width={180}
+              height={48}
               priority
+              className="h-10 w-auto"
             />
-            <span className="font-bold text-lg text-gray-900">
-              Quick Home Offer<span className="text-red-600"> USA</span>
-            </span>
           </Link>
 
           {/* Desktop Nav */}

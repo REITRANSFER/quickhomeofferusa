@@ -37,11 +37,14 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
-            <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo.svg" alt="Quick Home Offer USA" width={32} height={32} />
-              <span className="text-white font-bold text-lg">
-                Quick Home Offer<span className="text-red-500"> USA</span>
-              </span>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/logo.jpeg"
+                alt="Quick Home Offer USA"
+                width={180}
+                height={48}
+                className="h-10 w-auto"
+              />
             </Link>
             <p className="mt-4 text-sm leading-relaxed">
               We buy houses fast for cash in any condition. No fees, no commissions,

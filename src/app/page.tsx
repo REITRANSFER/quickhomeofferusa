@@ -48,14 +48,14 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section — ABOVE THE FOLD (CRO-focused) */}
-      <section className="bg-gradient-to-b from-green-50 to-white">
+      <section className="bg-gradient-to-b from-blue-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left — Copy */}
             <div>
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                 Sell Your House Fast for Cash — Get a Fair Offer in{" "}
-                <span className="text-green-700">24 Hours</span>
+                <span className="text-blue-800">24 Hours</span>
               </h1>
               <p className="mt-6 text-lg text-gray-600 leading-relaxed">
                 No fees. No commissions. No repairs. We buy houses in any condition
@@ -83,7 +83,7 @@ export default function HomePage() {
               <div className="mt-8 lg:hidden">
                 <a
                   href={`tel:${PHONE.replace(/[^0-9+]/g, "")}`}
-                  className="block bg-green-700 text-white text-center py-4 rounded-xl font-semibold text-lg hover:bg-green-800 transition-colors"
+                  className="block bg-red-600 text-white text-center py-4 rounded-xl font-semibold text-lg hover:bg-red-700 transition-colors"
                 >
                   Call Now: {PHONE}
                 </a>
@@ -114,7 +114,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8">
             {STEPS.map((step) => (
               <div key={step.number} className="text-center">
-                <div className="w-14 h-14 bg-green-700 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto">
+                <div className="w-14 h-14 bg-red-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto">
                   {step.number}
                 </div>
                 <h3 className="mt-5 text-xl font-bold text-gray-900">{step.title}</h3>
@@ -126,7 +126,7 @@ export default function HomePage() {
           <div className="text-center mt-12">
             <Link
               href="/how-it-works"
-              className="text-green-700 font-semibold hover:underline"
+              className="text-blue-800 font-semibold hover:underline"
             >
               Learn more about our process &rarr;
             </Link>
@@ -146,7 +146,7 @@ export default function HomePage() {
               <thead>
                 <tr className="border-b-2 border-gray-200">
                   <th className="py-4 pr-6 text-gray-500 font-medium"></th>
-                  <th className="py-4 px-6 text-green-700 font-bold">Sell to Us</th>
+                  <th className="py-4 px-6 text-blue-800 font-bold">Sell to Us</th>
                   <th className="py-4 px-6 text-gray-400 font-bold">Traditional Agent</th>
                 </tr>
               </thead>
@@ -161,7 +161,7 @@ export default function HomePage() {
                 ].map(([label, us, agent]) => (
                   <tr key={label} className="border-b border-gray-100">
                     <td className="py-4 pr-6 font-medium text-gray-900">{label}</td>
-                    <td className="py-4 px-6 text-green-700 font-medium">{us}</td>
+                    <td className="py-4 px-6 text-blue-800 font-medium">{us}</td>
                     <td className="py-4 px-6 text-gray-500">{agent}</td>
                   </tr>
                 ))}
@@ -188,7 +188,7 @@ export default function HomePage() {
               <Link
                 key={situation.href}
                 href={situation.href}
-                className="block p-6 border border-gray-200 rounded-xl hover:border-green-700 hover:shadow-md transition-all"
+                className="block p-6 border border-gray-200 rounded-xl hover:border-blue-800 hover:shadow-md transition-all"
               >
                 <div className="text-3xl mb-3">{situation.icon}</div>
                 <h3 className="font-bold text-gray-900 mb-1">{situation.label}</h3>
@@ -200,7 +200,7 @@ export default function HomePage() {
       </section>
 
       {/* Social Proof / Testimonials */}
-      <section className="py-20 bg-green-50">
+      <section className="py-20 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
             What Homeowners Say About Us
@@ -229,7 +229,7 @@ export default function HomePage() {
             ].map((testimonial) => (
               <div
                 key={testimonial.name}
-                className="bg-white rounded-xl p-6 shadow-sm border border-green-100"
+                className="bg-white rounded-xl p-6 shadow-sm border border-blue-100"
               >
                 <div className="text-yellow-500 text-sm mb-3">
                   {"★".repeat(testimonial.stars)}
@@ -248,7 +248,7 @@ export default function HomePage() {
           <div className="text-center mt-10">
             <Link
               href="/reviews"
-              className="text-green-700 font-semibold hover:underline"
+              className="text-blue-800 font-semibold hover:underline"
             >
               Read more reviews &rarr;
             </Link>
@@ -272,7 +272,7 @@ export default function HomePage() {
               <Link
                 key={market.href}
                 href={market.href}
-                className="text-center py-3 px-4 border border-gray-200 rounded-lg hover:border-green-700 hover:bg-green-50 transition-all text-sm font-medium text-gray-700 hover:text-green-700"
+                className="text-center py-3 px-4 border border-gray-200 rounded-lg hover:border-blue-800 hover:bg-blue-50 transition-all text-sm font-medium text-gray-700 hover:text-blue-800"
               >
                 {market.label}
               </Link>
@@ -291,7 +291,7 @@ export default function HomePage() {
           <div className="text-center mt-8">
             <Link
               href="/faq"
-              className="text-green-700 font-semibold hover:underline"
+              className="text-blue-800 font-semibold hover:underline"
             >
               View all FAQs &rarr;
             </Link>
@@ -300,25 +300,25 @@ export default function HomePage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-green-700">
+      <section className="py-20 bg-blue-900">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Ready to Sell Your House Fast?
           </h2>
-          <p className="text-green-100 text-lg mb-8">
+          <p className="text-blue-100 text-lg mb-8">
             Get your free, no-obligation cash offer today. No fees, no commissions,
             no repairs — just a fair price and a fast closing.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/#get-offer"
-              className="bg-white text-green-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-50 transition-colors"
+              className="bg-white text-blue-800 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-colors"
             >
               Get My Cash Offer
             </Link>
             <a
               href={`tel:${PHONE.replace(/[^0-9+]/g, "")}`}
-              className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-800 transition-colors"
+              className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-red-700 transition-colors"
             >
               Call {PHONE}
             </a>

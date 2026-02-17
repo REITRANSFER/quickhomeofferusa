@@ -24,7 +24,7 @@ export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
               {i === items.length - 1 ? (
                 <span className="text-gray-900 font-medium">{item.name}</span>
               ) : (
-                <Link href={item.href} className="hover:text-green-700 hover:underline">
+                <Link href={item.href} className="hover:text-blue-800 hover:underline">
                   {item.name}
                 </Link>
               )}

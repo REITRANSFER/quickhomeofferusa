@@ -31,7 +31,7 @@ export function Header() {
               priority
             />
             <span className="font-bold text-lg text-gray-900">
-              Quick Home Offer<span className="text-green-700"> USA</span>
+              Quick Home Offer<span className="text-red-600"> USA</span>
             </span>
           </Link>
 
@@ -41,7 +41,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-gray-600 hover:text-green-700 transition-colors"
+                className="text-sm text-gray-600 hover:text-blue-800 transition-colors"
               >
                 {link.label}
               </Link>
@@ -52,13 +52,13 @@ export function Header() {
           <div className="hidden md:flex items-center gap-4">
             <a
               href={`tel:${PHONE.replace(/[^0-9+]/g, "")}`}
-              className="text-sm font-medium text-gray-700 hover:text-green-700"
+              className="text-sm font-medium text-gray-700 hover:text-blue-800"
             >
               {PHONE}
             </a>
             <Link
               href="/#get-offer"
-              className="bg-green-700 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-green-800 transition-colors"
+              className="bg-red-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-red-700 transition-colors"
             >
               Get My Cash Offer
             </Link>
@@ -89,21 +89,21 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-gray-600 hover:text-green-700 py-1"
+                  className="text-gray-600 hover:text-blue-800 py-1"
                 >
                   {link.label}
                 </Link>
               ))}
               <a
                 href={`tel:${PHONE.replace(/[^0-9+]/g, "")}`}
-                className="text-green-700 font-semibold py-1"
+                className="text-red-600 font-semibold py-1"
               >
                 Call {PHONE}
               </a>
               <Link
                 href="/#get-offer"
                 onClick={() => setMobileOpen(false)}
-                className="bg-green-700 text-white px-5 py-3 rounded-lg text-center font-semibold mt-2"
+                className="bg-red-600 text-white px-5 py-3 rounded-lg text-center font-semibold mt-2"
               >
                 Get My Cash Offer
               </Link>

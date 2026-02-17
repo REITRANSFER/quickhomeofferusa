@@ -26,7 +26,7 @@ export default function ResourcesPage() {
       </div>
 
       {/* Hero */}
-      <section className="bg-green-50 py-16">
+      <section className="bg-blue-50 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Home Selling Resources
@@ -49,11 +49,11 @@ export default function ResourcesPage() {
               <Link
                 key={guide.slug}
                 href={`/resources/guides/${guide.slug}`}
-                className="block bg-white border border-gray-200 rounded-xl p-6 hover:border-green-700 hover:shadow-sm transition-all"
+                className="block bg-white border border-gray-200 rounded-xl p-6 hover:border-blue-800 hover:shadow-sm transition-all"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <span className="text-xs font-medium text-green-700 bg-green-50 px-2 py-1 rounded-full">
+                    <span className="text-xs font-medium text-blue-800 bg-blue-50 px-2 py-1 rounded-full">
                       {guide.category}
                     </span>
                     <h3 className="text-lg font-bold text-gray-900 mt-2">
@@ -62,7 +62,7 @@ export default function ResourcesPage() {
                     <p className="text-gray-600 text-sm mt-1">{guide.excerpt}</p>
                     <p className="text-xs text-gray-400 mt-2">{guide.readTime}</p>
                   </div>
-                  <span className="text-green-700 font-bold text-xl flex-shrink-0">
+                  <span className="text-blue-800 font-bold text-xl flex-shrink-0">
                     →
                   </span>
                 </div>
@@ -92,9 +92,9 @@ export default function ResourcesPage() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="flex items-center gap-3 bg-white p-4 rounded-xl border border-gray-200 hover:border-green-700 transition-colors"
+                className="flex items-center gap-3 bg-white p-4 rounded-xl border border-gray-200 hover:border-blue-800 transition-colors"
               >
-                <span className="text-green-700 font-bold">→</span>
+                <span className="text-blue-800 font-bold">→</span>
                 <span className="text-gray-700 font-medium">{link.name}</span>
               </Link>
             ))}

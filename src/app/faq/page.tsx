@@ -25,7 +25,7 @@ export default function FAQPage() {
       </div>
 
       {/* Hero */}
-      <section className="bg-green-50 py-16">
+      <section className="bg-blue-50 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Frequently Asked Questions

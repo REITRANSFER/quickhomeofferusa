@@ -49,7 +49,7 @@ export default function HowItWorksPage() {
       </div>
 
       {/* Hero */}
-      <section className="bg-green-50 py-16">
+      <section className="bg-blue-50 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             How Selling Your House for Cash Works
@@ -68,7 +68,7 @@ export default function HowItWorksPage() {
           <div className="space-y-16">
             {STEPS.map((step, i) => (
               <div key={i} className="flex gap-6">
-                <div className="flex-shrink-0 w-14 h-14 bg-green-700 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                <div className="flex-shrink-0 w-14 h-14 bg-red-600 text-white rounded-full flex items-center justify-center text-xl font-bold">
                   {i + 1}
                 </div>
                 <div>

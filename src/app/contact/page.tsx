@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
+import { ContactForm } from "@/components/forms/ContactForm";
 import { SITE_URL, COMPANY_NAME, PHONE, EMAIL } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -38,7 +39,7 @@ export default function ContactPage() {
                   <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
                   <a
                     href={`tel:${PHONE.replace(/[^0-9+]/g, "")}`}
-                    className="text-green-700 text-lg font-medium hover:underline"
+                    className="text-blue-800 text-lg font-medium hover:underline"
                   >
                     {PHONE}
                   </a>
@@ -48,7 +49,7 @@ export default function ContactPage() {
                   <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
                   <a
                     href={`mailto:${EMAIL}`}
-                    className="text-green-700 font-medium hover:underline"
+                    className="text-blue-800 font-medium hover:underline"
                   >
                     {EMAIL}
                   </a>
@@ -68,66 +69,7 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-gray-50 p-8 rounded-xl">
-              <h2 className="text-xl font-bold text-gray-900 mb-6">
-                Send Us a Message
-              </h2>
-              <form className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-700 focus:border-green-700 outline-none"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-700 focus:border-green-700 outline-none"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                    Phone
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-700 focus:border-green-700 outline-none"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-700 focus:border-green-700 outline-none resize-none"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-green-700 text-white py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
+            <ContactForm />
           </div>
         </div>
       </section>

@@ -71,7 +71,7 @@ export default async function CityPage({ params }: PageProps) {
       </div>
 
       {/* Hero */}
-      <section className="bg-green-50 py-16">
+      <section className="bg-blue-50 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Sell My House Fast in {city.city}, {city.state} — Cash Offer in 24 Hours
@@ -84,13 +84,13 @@ export default async function CityPage({ params }: PageProps) {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/#get-offer"
-              className="bg-green-700 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-800 transition-colors"
+              className="bg-red-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-red-700 transition-colors"
             >
               Get My Cash Offer
             </Link>
             <a
               href={`tel:${PHONE.replace(/[^0-9+]/g, "")}`}
-              className="border-2 border-green-700 text-green-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-50 transition-colors"
+              className="border-2 border-blue-800 text-blue-800 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-colors"
             >
               Call {PHONE}
             </a>
@@ -102,20 +102,20 @@ export default async function CityPage({ params }: PageProps) {
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-3 gap-6 mb-12">
-            <div className="bg-green-50 p-6 rounded-xl text-center">
-              <p className="text-3xl font-bold text-green-700">
+            <div className="bg-blue-50 p-6 rounded-xl text-center">
+              <p className="text-3xl font-bold text-blue-800">
                 {formatPopulation(city.population)}
               </p>
               <p className="text-sm text-gray-600 mt-1">Population</p>
             </div>
-            <div className="bg-green-50 p-6 rounded-xl text-center">
-              <p className="text-3xl font-bold text-green-700">
+            <div className="bg-blue-50 p-6 rounded-xl text-center">
+              <p className="text-3xl font-bold text-blue-800">
                 {formatCurrency(city.medianHomeValue)}
               </p>
               <p className="text-sm text-gray-600 mt-1">Median Home Value</p>
             </div>
-            <div className="bg-green-50 p-6 rounded-xl text-center">
-              <p className="text-3xl font-bold text-green-700">7-14 Days</p>
+            <div className="bg-blue-50 p-6 rounded-xl text-center">
+              <p className="text-3xl font-bold text-blue-800">7-14 Days</p>
               <p className="text-sm text-gray-600 mt-1">Our Avg. Closing Time</p>
             </div>
           </div>
@@ -150,7 +150,7 @@ export default async function CityPage({ params }: PageProps) {
               },
             ].map((item) => (
               <div key={item.step} className="flex gap-6">
-                <div className="flex-shrink-0 w-14 h-14 bg-green-700 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                <div className="flex-shrink-0 w-14 h-14 bg-red-600 text-white rounded-full flex items-center justify-center text-xl font-bold">
                   {item.step}
                 </div>
                 <div>
@@ -172,7 +172,7 @@ export default async function CityPage({ params }: PageProps) {
               <thead className="bg-gray-50">
                 <tr>
                   <th className="p-4 font-semibold text-gray-900">Factor</th>
-                  <th className="p-4 font-semibold text-green-700">
+                  <th className="p-4 font-semibold text-blue-800">
                     {COMPANY_NAME}
                   </th>
                   <th className="p-4 font-semibold text-gray-500">
@@ -205,7 +205,7 @@ export default async function CityPage({ params }: PageProps) {
                     <td className="p-4 font-medium text-gray-900">
                       {row.factor}
                     </td>
-                    <td className="p-4 text-green-700 font-medium">{row.us}</td>
+                    <td className="p-4 text-blue-800 font-medium">{row.us}</td>
                     <td className="p-4 text-gray-500">{row.them}</td>
                   </tr>
                 ))}
@@ -231,9 +231,9 @@ export default async function CityPage({ params }: PageProps) {
               <Link
                 key={situation.name}
                 href={situation.href}
-                className="flex items-center gap-3 bg-gray-50 p-4 rounded-lg hover:bg-green-50 transition-colors"
+                className="flex items-center gap-3 bg-gray-50 p-4 rounded-lg hover:bg-blue-50 transition-colors"
               >
-                <span className="text-green-700 font-bold">→</span>
+                <span className="text-blue-800 font-bold">→</span>
                 <span className="text-gray-700">{situation.name}</span>
               </Link>
             ))}
@@ -263,7 +263,7 @@ export default async function CityPage({ params }: PageProps) {
                 <Link
                   key={nearby.slug}
                   href={`/sell-my-house-fast/${nearby.slug}`}
-                  className="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm hover:border-green-700 hover:text-green-700 transition-colors"
+                  className="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm hover:border-blue-800 hover:text-blue-800 transition-colors"
                 >
                   {nearby.city}, {nearby.state}
                 </Link>
@@ -274,12 +274,12 @@ export default async function CityPage({ params }: PageProps) {
       )}
 
       {/* CTA */}
-      <section className="py-20 bg-green-700">
+      <section className="py-20 bg-blue-900">
         <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-white text-center mb-3">
             Ready to Sell Your {city.city} Home?
           </h2>
-          <p className="text-green-100 text-center mb-8">
+          <p className="text-blue-100 text-center mb-8">
             Get a no-obligation cash offer in 24 hours.
           </p>
           <div className="bg-white p-8 rounded-xl">

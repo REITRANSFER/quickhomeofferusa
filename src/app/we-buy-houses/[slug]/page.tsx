@@ -96,25 +96,25 @@ export default async function WeBuyHousesPage({ params }: PageProps) {
       </div>
 
       {/* Hero */}
-      <section className="bg-green-700 py-16">
+      <section className="bg-blue-900 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-bold text-white mb-4">
             We Buy Houses in {city.city}, {city.state}
           </h1>
-          <p className="text-lg text-green-100 max-w-2xl mx-auto mb-6">
+          <p className="text-lg text-blue-100 max-w-2xl mx-auto mb-6">
             Any condition. Any situation. Any timeline. Get a fair cash offer for
             your {city.city} home in 24 hours and close in as little as 7 days.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/#get-offer"
-              className="bg-white text-green-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-50 transition-colors"
+              className="bg-white text-blue-800 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-colors"
             >
               Get My Cash Offer
             </Link>
             <a
               href={`tel:${PHONE.replace(/[^0-9+]/g, "")}`}
-              className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-800 transition-colors"
+              className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-red-700 transition-colors"
             >
               Call {PHONE}
             </a>
@@ -176,8 +176,8 @@ export default async function WeBuyHousesPage({ params }: PageProps) {
               { number: "7 Days", label: "Fastest Closing" },
               { number: "$0", label: "Fees & Commissions" },
             ].map((stat) => (
-              <div key={stat.label} className="bg-green-50 p-6 rounded-xl">
-                <p className="text-2xl font-bold text-green-700">
+              <div key={stat.label} className="bg-blue-50 p-6 rounded-xl">
+                <p className="text-2xl font-bold text-blue-800">
                   {stat.number}
                 </p>
                 <p className="text-sm text-gray-600 mt-1">{stat.label}</p>
@@ -208,7 +208,7 @@ export default async function WeBuyHousesPage({ params }: PageProps) {
               },
             ].map((item) => (
               <div key={item.step} className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-green-700 text-white rounded-full flex items-center justify-center text-lg font-bold">
+                <div className="flex-shrink-0 w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center text-lg font-bold">
                   {item.step}
                 </div>
                 <div>
@@ -228,7 +228,7 @@ export default async function WeBuyHousesPage({ params }: PageProps) {
             </p>
             <Link
               href={`/sell-my-house-fast/${slug}`}
-              className="text-green-700 font-semibold hover:underline"
+              className="text-blue-800 font-semibold hover:underline"
             >
               Read our complete guide to selling your house fast in {city.city} →
             </Link>
@@ -258,7 +258,7 @@ export default async function WeBuyHousesPage({ params }: PageProps) {
                 <Link
                   key={nearby.slug}
                   href={`/we-buy-houses/${nearby.slug}`}
-                  className="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm hover:border-green-700 hover:text-green-700 transition-colors"
+                  className="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm hover:border-blue-800 hover:text-blue-800 transition-colors"
                 >
                   {nearby.city}, {nearby.state}
                 </Link>

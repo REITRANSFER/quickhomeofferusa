@@ -65,7 +65,7 @@ export default async function GuidePage({ params }: PageProps) {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <header className="mb-10">
-            <span className="text-sm font-medium text-green-700 mb-2 block">
+            <span className="text-sm font-medium text-blue-800 mb-2 block">
               {guide.category}
             </span>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
@@ -96,7 +96,7 @@ export default async function GuidePage({ params }: PageProps) {
                 <li key={i}>
                   <a
                     href={`#section-${i}`}
-                    className="text-sm text-green-700 hover:underline"
+                    className="text-sm text-blue-800 hover:underline"
                   >
                     {section.heading}
                   </a>
@@ -105,7 +105,7 @@ export default async function GuidePage({ params }: PageProps) {
               <li>
                 <a
                   href="#faq"
-                  className="text-sm text-green-700 hover:underline"
+                  className="text-sm text-blue-800 hover:underline"
                 >
                   Frequently Asked Questions
                 </a>
@@ -120,7 +120,7 @@ export default async function GuidePage({ params }: PageProps) {
                 {section.heading}
               </h2>
               <div
-                className="prose prose-gray max-w-none prose-headings:text-gray-900 prose-a:text-green-700 prose-a:no-underline hover:prose-a:underline prose-table:border-collapse prose-td:border prose-td:border-gray-200 prose-td:p-3 prose-th:border prose-th:border-gray-200 prose-th:p-3 prose-th:bg-gray-50 prose-th:text-left prose-th:font-semibold"
+                className="prose prose-gray max-w-none prose-headings:text-gray-900 prose-a:text-blue-800 prose-a:no-underline hover:prose-a:underline prose-table:border-collapse prose-td:border prose-td:border-gray-200 prose-td:p-3 prose-th:border prose-th:border-gray-200 prose-th:p-3 prose-th:bg-gray-50 prose-th:text-left prose-th:font-semibold"
                 dangerouslySetInnerHTML={{ __html: section.content }}
               />
             </section>
@@ -145,7 +145,7 @@ export default async function GuidePage({ params }: PageProps) {
                   <Link
                     key={related.slug}
                     href={`/resources/guides/${related.slug}`}
-                    className="flex items-center justify-between bg-gray-50 p-4 rounded-xl hover:bg-green-50 transition-colors"
+                    className="flex items-center justify-between bg-gray-50 p-4 rounded-xl hover:bg-blue-50 transition-colors"
                   >
                     <div>
                       <p className="font-semibold text-gray-900">
@@ -153,7 +153,7 @@ export default async function GuidePage({ params }: PageProps) {
                       </p>
                       <p className="text-sm text-gray-500">{related.readTime}</p>
                     </div>
-                    <span className="text-green-700 font-bold">→</span>
+                    <span className="text-blue-800 font-bold">→</span>
                   </Link>
                 ))}
               </div>
@@ -177,7 +177,7 @@ export default async function GuidePage({ params }: PageProps) {
                     <Link
                       key={path}
                       href={path}
-                      className="bg-gray-50 border border-gray-200 px-4 py-2 rounded-lg text-sm hover:border-green-700 hover:text-green-700 transition-colors"
+                      className="bg-gray-50 border border-gray-200 px-4 py-2 rounded-lg text-sm hover:border-blue-800 hover:text-blue-800 transition-colors"
                     >
                       {name}
                     </Link>
@@ -190,12 +190,12 @@ export default async function GuidePage({ params }: PageProps) {
       </article>
 
       {/* CTA */}
-      <section className="py-16 bg-green-700">
+      <section className="py-16 bg-blue-900">
         <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-white text-center mb-3">
             Ready to Get Your Cash Offer?
           </h2>
-          <p className="text-green-100 text-center mb-8">
+          <p className="text-blue-100 text-center mb-8">
             Free, no-obligation offer in 24 hours.
           </p>
           <div className="bg-white p-8 rounded-xl">

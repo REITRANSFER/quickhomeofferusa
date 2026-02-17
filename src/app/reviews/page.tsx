@@ -85,7 +85,7 @@ export default function ReviewsPage() {
       </div>
 
       {/* Hero */}
-      <section className="bg-green-50 py-16">
+      <section className="bg-blue-50 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             What Homeowners Say About Us
@@ -114,7 +114,7 @@ export default function ReviewsPage() {
                   <div className="text-yellow-500 text-sm">
                     {"★".repeat(review.stars)}
                   </div>
-                  <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
+                  <span className="text-xs bg-blue-100 text-blue-900 px-2 py-1 rounded-full">
                     {review.situation}
                   </span>
                 </div>
@@ -132,18 +132,18 @@ export default function ReviewsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-green-700">
+      <section className="py-16 bg-blue-900">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Join 500+ Homeowners Who Sold Fast
           </h2>
-          <p className="text-green-100 text-lg mb-8">
+          <p className="text-blue-100 text-lg mb-8">
             Get your free, no-obligation cash offer today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/#get-offer"
-              className="bg-white text-green-700 px-8 py-4 rounded-xl font-bold text-lg"
+              className="bg-white text-blue-800 px-8 py-4 rounded-xl font-bold text-lg"
             >
               Get My Cash Offer
             </Link>

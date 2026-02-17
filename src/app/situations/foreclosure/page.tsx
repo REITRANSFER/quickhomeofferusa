@@ -70,13 +70,13 @@ export default function ForeclosurePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/#get-offer"
-              className="bg-green-700 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-800 transition-colors"
+              className="bg-red-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-red-700 transition-colors"
             >
               Get My Cash Offer Now
             </Link>
             <a
               href={`tel:${PHONE.replace(/[^0-9+]/g, "")}`}
-              className="border-2 border-green-700 text-green-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-50 transition-colors"
+              className="border-2 border-blue-800 text-blue-800 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-colors"
             >
               Call {PHONE}
             </a>
@@ -155,7 +155,7 @@ export default function ForeclosurePage() {
                 key={option.title}
                 className={`p-6 rounded-xl border ${
                   option.highlight
-                    ? "border-green-300 bg-green-50"
+                    ? "border-blue-300 bg-blue-50"
                     : "border-gray-200 bg-white"
                 }`}
               >
@@ -170,7 +170,7 @@ export default function ForeclosurePage() {
           </div>
 
           {/* Testimonial */}
-          <div className="bg-green-50 p-8 rounded-xl mt-16">
+          <div className="bg-blue-50 p-8 rounded-xl mt-16">
             <div className="text-yellow-500 text-lg mb-3">★★★★★</div>
             <p className="text-gray-700 text-lg leading-relaxed italic">
               &ldquo;I was facing foreclosure and had 30 days to sell. Quick Home

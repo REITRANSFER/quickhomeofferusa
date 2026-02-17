@@ -25,7 +25,7 @@ export function StateHub({ state }: { state: StateData }) {
       </div>
 
       {/* Hero */}
-      <section className="bg-green-50 py-16">
+      <section className="bg-blue-50 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Sell My House Fast in {state.name} — Cash Buyers in {state.cities.length} Markets
@@ -38,13 +38,13 @@ export function StateHub({ state }: { state: StateData }) {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/#get-offer"
-              className="bg-green-700 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-800 transition-colors"
+              className="bg-red-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-red-700 transition-colors"
             >
               Get My Cash Offer
             </Link>
             <a
               href={`tel:${PHONE.replace(/[^0-9+]/g, "")}`}
-              className="border-2 border-green-700 text-green-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-50 transition-colors"
+              className="border-2 border-blue-800 text-blue-800 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-colors"
             >
               Call {PHONE}
             </a>
@@ -56,20 +56,20 @@ export function StateHub({ state }: { state: StateData }) {
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-3 gap-6 mb-12">
-            <div className="bg-green-50 p-6 rounded-xl text-center">
-              <p className="text-3xl font-bold text-green-700">
+            <div className="bg-blue-50 p-6 rounded-xl text-center">
+              <p className="text-3xl font-bold text-blue-800">
                 {state.cities.length}
               </p>
               <p className="text-sm text-gray-600 mt-1">Markets Served</p>
             </div>
-            <div className="bg-green-50 p-6 rounded-xl text-center">
-              <p className="text-3xl font-bold text-green-700">
+            <div className="bg-blue-50 p-6 rounded-xl text-center">
+              <p className="text-3xl font-bold text-blue-800">
                 {formatPopulation(totalPopulation)}
               </p>
               <p className="text-sm text-gray-600 mt-1">Combined Population</p>
             </div>
-            <div className="bg-green-50 p-6 rounded-xl text-center">
-              <p className="text-3xl font-bold text-green-700">
+            <div className="bg-blue-50 p-6 rounded-xl text-center">
+              <p className="text-3xl font-bold text-blue-800">
                 {formatCurrency(avgHomeValue)}
               </p>
               <p className="text-sm text-gray-600 mt-1">Avg. Home Value</p>
@@ -84,7 +84,7 @@ export function StateHub({ state }: { state: StateData }) {
               <Link
                 key={city.slug}
                 href={`/sell-my-house-fast/${city.slug}`}
-                className="flex items-center justify-between bg-white border border-gray-200 p-5 rounded-xl hover:border-green-700 hover:shadow-sm transition-all"
+                className="flex items-center justify-between bg-white border border-gray-200 p-5 rounded-xl hover:border-blue-800 hover:shadow-sm transition-all"
               >
                 <div>
                   <p className="font-bold text-gray-900">
@@ -95,7 +95,7 @@ export function StateHub({ state }: { state: StateData }) {
                     {formatCurrency(city.medianHomeValue)}
                   </p>
                 </div>
-                <span className="text-green-700 font-bold">→</span>
+                <span className="text-blue-800 font-bold">→</span>
               </Link>
             ))}
           </div>
@@ -152,7 +152,7 @@ export function StateHub({ state }: { state: StateData }) {
               <Link
                 key={situation.name}
                 href={situation.href}
-                className="bg-gray-50 border border-gray-200 px-4 py-2 rounded-lg text-sm hover:border-green-700 hover:text-green-700 transition-colors"
+                className="bg-gray-50 border border-gray-200 px-4 py-2 rounded-lg text-sm hover:border-blue-800 hover:text-blue-800 transition-colors"
               >
                 {situation.name}
               </Link>
@@ -162,12 +162,12 @@ export function StateHub({ state }: { state: StateData }) {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-green-700">
+      <section className="py-20 bg-blue-900">
         <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-white text-center mb-3">
             Sell Your {state.name} Home Fast
           </h2>
-          <p className="text-green-100 text-center mb-8">
+          <p className="text-blue-100 text-center mb-8">
             Get a no-obligation cash offer in 24 hours.
           </p>
           <div className="bg-white p-8 rounded-xl">

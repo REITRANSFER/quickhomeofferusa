@@ -41,9 +41,9 @@ export default function GuidesIndexPage() {
               <Link
                 key={guide.slug}
                 href={`/resources/guides/${guide.slug}`}
-                className="block bg-white border border-gray-200 rounded-xl p-6 hover:border-green-700 hover:shadow-sm transition-all"
+                className="block bg-white border border-gray-200 rounded-xl p-6 hover:border-blue-800 hover:shadow-sm transition-all"
               >
-                <span className="text-xs font-medium text-green-700 bg-green-50 px-2 py-1 rounded-full">
+                <span className="text-xs font-medium text-blue-800 bg-blue-50 px-2 py-1 rounded-full">
                   {guide.category}
                 </span>
                 <h2 className="text-xl font-bold text-gray-900 mt-3">

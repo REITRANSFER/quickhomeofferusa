@@ -23,7 +23,7 @@ export default function AboutPage() {
       </div>
 
       {/* Hero */}
-      <section className="bg-green-50 py-16">
+      <section className="bg-blue-50 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             About {COMPANY_NAME}
@@ -83,8 +83,8 @@ export default function AboutPage() {
               { number: "4.9/5", label: "Average Rating" },
               { number: "14", label: "Avg Days to Close" },
             ].map((stat) => (
-              <div key={stat.label} className="bg-green-50 p-6 rounded-xl">
-                <p className="text-3xl font-bold text-green-700">{stat.number}</p>
+              <div key={stat.label} className="bg-blue-50 p-6 rounded-xl">
+                <p className="text-3xl font-bold text-blue-800">{stat.number}</p>
                 <p className="text-sm text-gray-600 mt-1">{stat.label}</p>
               </div>
             ))}
@@ -93,24 +93,24 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-green-700">
+      <section className="py-16 bg-blue-900">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Ready to Work With Us?
           </h2>
-          <p className="text-green-100 text-lg mb-8">
+          <p className="text-blue-100 text-lg mb-8">
             Get your free, no-obligation cash offer today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/#get-offer"
-              className="bg-white text-green-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-50 transition-colors"
+              className="bg-white text-blue-800 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-colors"
             >
               Get My Cash Offer
             </Link>
             <a
               href={`tel:${PHONE.replace(/[^0-9+]/g, "")}`}
-              className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-800 transition-colors"
+              className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-red-700 transition-colors"
             >
               Call {PHONE}
             </a>

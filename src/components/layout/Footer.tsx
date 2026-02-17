@@ -40,7 +40,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-2">
               <Image src="/logo.svg" alt="Quick Home Offer USA" width={32} height={32} />
               <span className="text-white font-bold text-lg">
-                Quick Home Offer<span className="text-green-400"> USA</span>
+                Quick Home Offer<span className="text-red-500"> USA</span>
               </span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed">

@@ -114,7 +114,7 @@ export function AddressAutocomplete({
       onChange={(e) => onChange(e.target.value)}
       className={
         className ||
-        "w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-green-700 focus:border-green-700 outline-none"
+        "w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-700 focus:border-blue-700 outline-none"
       }
     />
   );

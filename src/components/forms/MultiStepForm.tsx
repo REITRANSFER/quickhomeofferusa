@@ -26,6 +26,21 @@ interface FormData {
   email: string;
 }
 
+function formatPhone(value: string): string {
+  // Strip everything except digits
+  const digits = value.replace(/\D/g, "");
+
+  // Remove leading 1 if present (we add +1 prefix automatically)
+  const national = digits.startsWith("1") && digits.length > 10
+    ? digits.slice(1)
+    : digits;
+
+  if (national.length === 0) return "";
+  if (national.length <= 3) return `+1 (${national}`;
+  if (national.length <= 6) return `+1 (${national.slice(0, 3)}) ${national.slice(3)}`;
+  return `+1 (${national.slice(0, 3)}) ${national.slice(3, 6)}-${national.slice(6, 10)}`;
+}
+
 export function MultiStepForm() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState<FormData>({
@@ -61,9 +76,9 @@ export function MultiStepForm() {
 
   if (submitted) {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center">
-        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg className="w-8 h-8 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <div className="bg-blue-50 border border-blue-200 rounded-2xl p-8 text-center">
+        <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg className="w-8 h-8 text-blue-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
@@ -84,7 +99,7 @@ export function MultiStepForm() {
           <div
             key={i}
             className={`h-1.5 flex-1 rounded-full transition-colors ${
-              i < step ? "bg-green-700" : "bg-gray-200"
+              i < step ? "bg-red-600" : "bg-gray-200"
             }`}
           />
         ))}
@@ -112,7 +127,7 @@ export function MultiStepForm() {
             <button
               onClick={() => formData.address.trim() && setStep(2)}
               disabled={!formData.address.trim()}
-              className="w-full bg-green-700 text-white py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Next
             </button>
@@ -134,9 +149,9 @@ export function MultiStepForm() {
               <button
                 key={option.value}
                 onClick={() => handleSelect("condition", option.value)}
-                className={`p-4 border-2 rounded-xl text-left transition-all hover:border-green-700 hover:bg-green-50 ${
+                className={`p-4 border-2 rounded-xl text-left transition-all hover:border-blue-800 hover:bg-blue-50 ${
                   formData.condition === option.value
-                    ? "border-green-700 bg-green-50"
+                    ? "border-blue-800 bg-blue-50"
                     : "border-gray-200"
                 }`}
               >
@@ -162,9 +177,9 @@ export function MultiStepForm() {
               <button
                 key={option.value}
                 onClick={() => handleSelect("timeline", option.value)}
-                className={`p-4 border-2 rounded-xl text-left transition-all hover:border-green-700 hover:bg-green-50 ${
+                className={`p-4 border-2 rounded-xl text-left transition-all hover:border-blue-800 hover:bg-blue-50 ${
                   formData.timeline === option.value
-                    ? "border-green-700 bg-green-50"
+                    ? "border-blue-800 bg-blue-50"
                     : "border-gray-200"
                 }`}
               >
@@ -194,17 +209,17 @@ export function MultiStepForm() {
                 setFormData((prev) => ({ ...prev, name: e.target.value }))
               }
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-green-700 focus:border-green-700 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-700 focus:border-blue-700 outline-none"
             />
             <input
               type="tel"
-              placeholder="Phone number"
+              placeholder="+1 (___) ___-____"
               value={formData.phone}
               onChange={(e) =>
-                setFormData((prev) => ({ ...prev, phone: e.target.value }))
+                setFormData((prev) => ({ ...prev, phone: formatPhone(e.target.value) }))
               }
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-green-700 focus:border-green-700 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-700 focus:border-blue-700 outline-none"
             />
             <input
               type="email"
@@ -214,11 +229,11 @@ export function MultiStepForm() {
                 setFormData((prev) => ({ ...prev, email: e.target.value }))
               }
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-green-700 focus:border-green-700 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-700 focus:border-blue-700 outline-none"
             />
             <button
               type="submit"
-              className="w-full bg-green-700 text-white py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors"
+              className="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors"
             >
               Get My Cash Offer
             </button>

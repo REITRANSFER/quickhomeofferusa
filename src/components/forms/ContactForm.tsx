@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import { validatePhone, validateEmail, getUtmParams } from "@/lib/validation";
 
 function formatPhone(value: string): string {
   const digits = value.replace(/\D/g, "");
@@ -17,13 +18,37 @@ function formatPhone(value: string): string {
 export function ContactForm() {
   const [phone, setPhone] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const honeypotRef = useRef<HTMLInputElement>(null);
+  const utmRef = useRef<Record<string, string>>({});
+
+  useEffect(() => {
+    utmRef.current = getUtmParams();
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setError("");
+
+    // Honeypot check
+    if (honeypotRef.current?.value) return;
+
+    // Phone validation
+    if (phone) {
+      const phoneCheck = validatePhone(phone);
+      if (!phoneCheck.valid) { setError(phoneCheck.msg || "Invalid phone number."); return; }
+    }
+
     const form = e.currentTarget;
+    const emailValue = (form.elements.namedItem("email") as HTMLInputElement).value;
+
+    // Email validation
+    const emailCheck = validateEmail(emailValue);
+    if (!emailCheck.valid) { setError(emailCheck.msg || "Invalid email."); return; }
+
     const data = {
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
-      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      email: emailValue,
       phone,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
     };
@@ -32,7 +57,7 @@ export function ContactForm() {
       await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, source: "contact", page_url: window.location.href }),
+        body: JSON.stringify({ ...data, ...utmRef.current, source: "contact", page_url: window.location.href }),
       });
     } catch {
       // Silently handle — still show success
@@ -62,6 +87,8 @@ export function ContactForm() {
         Send Us a Message
       </h2>
       <form onSubmit={handleSubmit} className="space-y-4">
+        {error && <p className="text-red-600 text-sm">{error}</p>}
+        <input type="text" ref={honeypotRef} name="website" style={{position:"absolute",left:"-9999px",top:"-9999px",opacity:0,height:0,width:0}} tabIndex={-1} autoComplete="off" />
         <div>
           <label htmlFor="name" className="block text-base font-medium text-gray-700 mb-1">
             Full Name

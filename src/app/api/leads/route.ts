@@ -32,6 +32,14 @@ export async function POST(request: Request) {
         mortgage_balance: body.mortgage_balance || "",
         asking_price: body.asking_price || "",
         additional_notes: body.additional_notes || "",
+        // UTM tracking
+        utm_source: body.utm_source || "",
+        utm_medium: body.utm_medium || "",
+        utm_campaign: body.utm_campaign || "",
+        utm_content: body.utm_content || "",
+        utm_term: body.utm_term || "",
+        fbclid: body.fbclid || "",
+        landing_page: body.landing_page || "",
       }),
     });
   } catch (err) {

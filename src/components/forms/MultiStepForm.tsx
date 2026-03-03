@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { AddressAutocomplete } from "./AddressAutocomplete";
+import { validatePhone, validateEmail, getUtmParams } from "@/lib/validation";
 
 const REASONS_FOR_SELLING = [
   { value: "foreclosure", label: "Foreclosure", description: "Facing or behind on mortgage" },
@@ -62,6 +63,13 @@ export function MultiStepForm() {
     email: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const honeypotRef = useRef<HTMLInputElement>(null);
+  const utmRef = useRef<Record<string, string>>({});
+
+  useEffect(() => {
+    utmRef.current = getUtmParams();
+  }, []);
 
   const totalSteps = 5;
 
@@ -72,11 +80,24 @@ export function MultiStepForm() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    setError("");
+
+    // Honeypot check
+    if (honeypotRef.current?.value) return;
+
+    // Phone validation
+    const phoneCheck = validatePhone(formData.phone);
+    if (!phoneCheck.valid) { setError(phoneCheck.msg || "Invalid phone number."); return; }
+
+    // Email validation
+    const emailCheck = validateEmail(formData.email);
+    if (!emailCheck.valid) { setError(emailCheck.msg || "Invalid email."); return; }
+
     try {
       await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, source: "multi-step-form", page_url: window.location.href }),
+        body: JSON.stringify({ ...formData, ...utmRef.current, source: "multi-step-form", page_url: window.location.href }),
       });
     } catch {
       // Silently handle
@@ -242,6 +263,8 @@ export function MultiStepForm() {
           <p className="text-base text-gray-500 mb-5">
             Step {totalSteps} of {totalSteps} — Where should we send your cash offer?
           </p>
+          {error && <p className="text-red-600 text-sm mb-3">{error}</p>}
+          <input type="text" ref={honeypotRef} name="website" style={{position:"absolute",left:"-9999px",top:"-9999px",opacity:0,height:0,width:0}} tabIndex={-1} autoComplete="off" />
           <div className="flex flex-col gap-3">
             <input
               type="text"

@@ -22,13 +22,6 @@ const PROPERTY_CONDITIONS = [
   { value: "poor", label: "Poor", description: "Major work needed — structural damage, fire, mold, or uninhabitable" },
 ];
 
-const TIMELINES = [
-  { value: "asap", label: "ASAP", description: "As fast as possible" },
-  { value: "1-3-months", label: "1-3 Months", description: "Some flexibility" },
-  { value: "3-6-months", label: "3-6 Months", description: "No rush" },
-  { value: "exploring", label: "Just Exploring", description: "Seeing my options" },
-];
-
 interface FormData {
   address: string;
   reason: string;
@@ -71,7 +64,7 @@ export function MultiStepForm() {
     utmRef.current = getUtmParams();
   }, []);
 
-  const totalSteps = 5;
+  const totalSteps = 4;
 
   function handleSelect(field: keyof FormData, value: string) {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -226,36 +219,8 @@ export function MultiStepForm() {
         </div>
       )}
 
-      {/* Step 4: Timeline */}
+      {/* Step 4: Contact info */}
       {step === 4 && (
-        <div>
-          <h3 className="text-lg font-bold text-gray-900 mb-1">
-            Selling Timeline
-          </h3>
-          <p className="text-base text-gray-500 mb-5">
-            Step 4 of {totalSteps} — How quickly do you need to sell?
-          </p>
-          <div className="grid grid-cols-2 gap-3">
-            {TIMELINES.map((option) => (
-              <button
-                key={option.value}
-                onClick={() => handleSelect("timeline", option.value)}
-                className={`p-4 border-2 rounded-xl text-left transition-all hover:border-blue-800 hover:bg-blue-50 ${
-                  formData.timeline === option.value
-                    ? "border-blue-800 bg-blue-50"
-                    : "border-gray-200"
-                }`}
-              >
-                <span className="font-semibold text-gray-900 block">{option.label}</span>
-                <span className="text-base text-gray-500">{option.description}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Step 5: Contact info */}
-      {step === 5 && (
         <form onSubmit={handleSubmit}>
           <h3 className="text-lg font-bold text-gray-900 mb-1">
             Almost Done!
